@@ -6,7 +6,7 @@ import { ClerkProvider,
   SignIn,
   SignUp,
   UserButton, } from "@clerk/clerk-react";
-  import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+  import { Route, Routes, useNavigate } from "react-router-dom";
 
  
 
@@ -16,8 +16,8 @@ if (!REACT_APP_CLERK_PUBLISHABLE_KEY) {
 }
 
 const HomePage = lazy(() => import('../../pages/HomePage'));
-const LoginPage = lazy(() => import('../../pages/Sign-inPage'));
-const RegisterPage = lazy(() => import('../../pages/Sign-upPage'));
+const LoginPage = lazy(() => import('../../pages/Sing-inPage'));
+const RegisterPage = lazy(() => import('../../pages/Sing-upPage'));
 // const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
 
 function PublicPage() {
@@ -47,9 +47,10 @@ function App() {
       publishableKey={REACT_APP_CLERK_PUBLISHABLE_KEY}
       navigate={(to) => navigate(to)}
     >
-      <div>Hello from clerk</div>
+      {/* <div>Hello from clerk</div> */}
       <Routes>
         <Route path="/" element={<PublicPage />} />
+          <Route index element= {<HomePage />} />
         <Route
           path="/sign-in/*"
           element={<SignIn routing="path" path="/sign-in" />}
