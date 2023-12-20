@@ -7,7 +7,8 @@ import { UserMenu } from './UserMenu';
 import { HeaderApp, Nav } from "./Header.styled";
 
 export const Header = () => {
-  const authetificated = useAuth();
+  const {userId:authetificated} = useAuth();
+  console.log(authetificated);
 
   return (
     <HeaderApp>

@@ -34,7 +34,7 @@ function App() {
       publishableKey={REACT_APP_CLERK_PUBLISHABLE_KEY}
       navigate={'/'}
     >
-      <Routes>
+      <Routes basename="/test-auth">
         <Route path="/" element={ <Layout />}>
           <Route index element= {<HomePage />} />
 

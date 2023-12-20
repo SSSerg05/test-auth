@@ -8,7 +8,8 @@ export const UserMenu = () => {
     <>
       <List>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/dashboard'>Contacts</Link></li>
+        <li><Link to='/dashboard'>Dashboard</Link></li>
+        <li><Link to='/dashboard/invoices'>Invoices</Link></li>
       </List>
       
       <Logout />

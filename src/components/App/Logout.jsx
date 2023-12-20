@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 
 
 export const Logout = () => {
-  const authetificated = useAuth();
-  if (!authetificated) return (<></>)
+  const {userId:authetificated} = useAuth();
+
+  console.log(authetificated);
+  // if (!authetificated) return (<></>)
+
 
   return (<>
     <SignedIn>
