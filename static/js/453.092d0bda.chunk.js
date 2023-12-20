@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_auth=self.webpackChunktest_auth||[]).push([[453],{453:function(e,t,n){n.r(t),n.d(t,{default:function(){return s}});var u=n(184);function s(){return(0,u.jsx)("div",{children:(0,u.jsx)("h1",{children:"This is the Home(index) page"})})}}}]);
+//# sourceMappingURL=453.092d0bda.chunk.js.map
