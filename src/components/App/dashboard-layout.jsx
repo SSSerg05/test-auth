@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {Suspense, useEffect} from 'react'
 import { useAuth } from "@clerk/clerk-react"
 import { Outlet, useNavigate } from "react-router-dom"
  
@@ -17,6 +17,12 @@ export default function DashboardLayout() {
   if (!isLoaded) return "Loading..."
  
   return (
-    <Outlet />
+    <Suspense fallback={
+      <>
+        <div>Loading...</div>
+      </> 
+    }>
+      <Outlet />
+    </Suspense>
   )
 }
