@@ -5,7 +5,7 @@ import { useAuth } from "@clerk/clerk-react";
 // import { selectAuthetification } from "redux/auth/selectors";
 
 const PublicRoute = ({children, redirecTo = '/'}) => {
-  const authetificated = useAuth() //useSelector(selectAuthetification);
+  const authetificated = useAuth(); //useSelector(selectAuthetification);
 
   return authetificated ? <Navigate to={redirecTo} /> : children;
 }

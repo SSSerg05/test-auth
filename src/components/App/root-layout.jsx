@@ -1,5 +1,6 @@
 import { Link, Outlet } from 'react-router-dom'
 import { ClerkProvider, SignedIn, SignedOut, UserButton } from '@clerk/clerk-react'
+import { Suspense } from 'react'
  
 // const {REACT_APP_CLERK_PUBLISHABLE_KEY} = process.env;
 // if (!REACT_APP_CLERK_PUBLISHABLE_KEY) {
@@ -25,7 +26,13 @@ export default function RootLayout() {
         </div>
       </header>
       <main>
-        <Outlet />
+        <Suspense fallback={
+          <>
+            <div>Loading...</div>
+          </> 
+        }>
+          <Outlet />
+        </Suspense>
       </main>
      {/* </ClerkProvider> */}
     </>
