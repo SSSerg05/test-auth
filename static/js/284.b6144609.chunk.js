@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunktest_auth=self.webpackChunktest_auth||[]).push([[284],{284:function(e,n,s){s.r(n),s.d(n,{default:function(){return i}});var r=s(87),t=s(184);function i(){return(0,t.jsxs)(t.Fragment,{children:[(0,t.jsx)("h1",{children:"Dashboard page"}),(0,t.jsx)("p",{children:"This is a protected page."}),(0,t.jsxs)("ul",{children:[(0,t.jsx)("li",{children:(0,t.jsx)(r.rU,{to:"/dashboard/invoices",children:"Invoices"})}),(0,t.jsx)("li",{children:(0,t.jsx)(r.rU,{to:"/",children:"Return to index"})})]})]})}}}]);
+//# sourceMappingURL=284.b6144609.chunk.js.map
