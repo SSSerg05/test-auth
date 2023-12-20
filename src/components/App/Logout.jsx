@@ -13,10 +13,10 @@ export const Logout = () => {
 
   return (<>
     <SignedIn>
-      <UserButton afterSignOutUrl='/' />
+      <UserButton afterSignOutUrl='/test-auth' />
     </SignedIn>
     <SignedOut>
-      <Link to="/sign-in">Sign In</Link>
+      <Link to="/test-auth/sign-in">Sign In</Link>
     </SignedOut>
   </>
   )

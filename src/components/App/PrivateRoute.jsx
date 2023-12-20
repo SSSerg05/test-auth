@@ -1,16 +1,27 @@
 import React from "react";
 // import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
-import { useAuth, useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "@clerk/clerk-react";
+
 
 // import { selectAuthetification, selectIsRefreshing, } from "redux/auth/selectors";
 
 const PrivateRoute = ({children, redirecTo = '/'}) => {
-  const {userId: authetificated} = useAuth(); //useSelector(selectAuthetification);
-  const {isSignedIn:isRefreshing} = useUser(); //useSelector(selectIsRefreshing);
-  const shouldRedirect = !authetificated && !isRefreshing;
+  const { userId, isLoaded } = useAuth()
+  const navigate = useNavigate()
+ 
+  console.log('test', userId)
+ 
+  React.useEffect(() => {
+    if (!userId) {
+      navigate(redirecTo);
+    }
+  }, [userId, navigate, redirecTo])
+ 
+  if (!isLoaded) return "Loading..."
 
-  return shouldRedirect ? <Navigate to={redirecTo} /> : children;
+
+  return children;
 }
 
 export default PrivateRoute;
