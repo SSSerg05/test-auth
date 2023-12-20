@@ -15,12 +15,12 @@ export default function RootLayout() {
           <div>
             <p>Clerk + React + React Router App</p>
           </div>
-          <SignedIn>
+          {/* <SignedIn>
             <UserButton afterSignOutUrl='/sign-in' />
           </SignedIn>
           <SignedOut>
             <Link to="/sign-in">Sign In</Link>
-          </SignedOut>
+          </SignedOut> */}
         </div>
       </header>
       <main>

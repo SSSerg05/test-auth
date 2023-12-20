@@ -1,30 +1,31 @@
-import React from 'react'
+import React, { lazy } from 'react'
 // import ReactDOM from 'react-dom/client'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+ // import ReactDOM from 'react-dom/client'
+import { RouterProvider, createBrowserRouter, } from 'react-router-dom'
  
 // Import the layouts
 import RootLayout from './root-layout'
 import DashboardLayout from './dashboard-layout'
+// import PublicRoute from './PublicRoute';
  
-// Import the components
-import IndexPage from '../../routes/index'
-import ContactPage from '../../routes/contact'
-import SignInPage from '../../routes/sign-in'
-import SignUpPage from '../../routes/sign-up'
-import DashboardPage from '../../routes/dashboard'
-import InvoicesPage from '../../routes/dashboard.invoices'
+// Import the pages
+const IndexPage = lazy(() => import('../../routes'));
+const ContactPage = lazy(() => import('../../routes/contact'));
+const SignInPage = lazy(() => import('../../routes/sign-in'));
+const SignUpPage = lazy(() => import('../../routes/sign-up'));
+const DashboardPage = lazy(() => import('../../routes/dashboard'));
+const InvoicesPage = lazy(() => import('../../routes/dashboard.invoices'));
  
+
 const router = createBrowserRouter([
   {
     element: <RootLayout />,
     children: [
-      // public pages
       { path: "/", element: <IndexPage /> },
       { path: "/contact", element: <ContactPage /> },
       { path: "/sign-in", element: <SignInPage /> },
       { path: "/sign-up", element: <SignUpPage /> },
       {
-        // private pages
         element: <DashboardLayout />,
         path: "dashboard",
         children: [
@@ -34,8 +35,7 @@ const router = createBrowserRouter([
       }
     ]
   }
-])
-
+], { basename: '/test-auth'})
 
 function App() {
 
